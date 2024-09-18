@@ -21,3 +21,11 @@ public class SistemaBancario {
             System.out.println("4. Sair");
             System.out.print("Opção: ");
             opcao = scanner.nextInt();
+
+            switch (opcao) {
+
+                case 1:
+                    System.out.println("\nSaldo disponível: R$ " + saldo);
+                    break;
+
+            }
