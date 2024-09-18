@@ -28,4 +28,17 @@ public class SistemaBancario {
                     System.out.println("\nSaldo disponível: R$ " + saldo);
                     break;
 
+                case 2:
+                    // Receber valor (depósito)
+                    System.out.print("\nDigite o valor que deseja depositar: R$ ");
+                    double valorDeposito = scanner.nextDouble();
+                    if (valorDeposito > 0) {
+                        saldo += valorDeposito;
+                        System.out.println("Depósito realizado com sucesso! Novo saldo: R$ " + saldo);
+                    } else {
+                        System.out.println("Valor inválido para depósito.");
+                    }
+                    break;
+
+
             }
