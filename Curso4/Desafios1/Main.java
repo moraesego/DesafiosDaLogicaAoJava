@@ -24,5 +24,9 @@ public class Main {
         carro1.exibirFichaTecnica();
         carro1.calcularIdade();
 
+        Aluno aluno1 = new Aluno();
+        aluno1.nome = "Junin";
+        aluno1.idade = 17;
+ aluno1.fichaAluno();
     }
 }
