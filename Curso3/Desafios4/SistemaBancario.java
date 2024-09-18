@@ -29,7 +29,7 @@ public class SistemaBancario {
                     break;
 
                 case 2:
-                    // Receber valor (depósito)
+
                     System.out.print("\nDigite o valor que deseja depositar: R$ ");
                     double valorDeposito = scanner.nextDouble();
                     if (valorDeposito > 0) {
@@ -37,6 +37,19 @@ public class SistemaBancario {
                         System.out.println("Depósito realizado com sucesso! Novo saldo: R$ " + saldo);
                     } else {
                         System.out.println("Valor inválido para depósito.");
+                    }
+                    break;
+                case 3:
+
+                    System.out.print("\nDigite o valor que deseja transferir: R$ ");
+                    double valorTransferencia = scanner.nextDouble();
+                    if (valorTransferencia > saldo) {
+                        System.out.println("Saldo insuficiente para realizar a transferência.");
+                    } else if (valorTransferencia <= 0) {
+                        System.out.println("Valor inválido para transferência.");
+                    } else {
+                        saldo -= valorTransferencia;
+                        System.out.println("Transferência realizada com sucesso! Novo saldo: R$ " + saldo);
                     }
                     break;
 
