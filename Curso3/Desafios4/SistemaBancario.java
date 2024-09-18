@@ -2,15 +2,13 @@ import java.util.Scanner;
 
 public class SistemaBancario {
     public static void main(String[] args) {
-        // Inicializa os dados do cliente
         String nomeCliente = "João Silva";
-        String tipoConta = "Corrente"; // ou "Poupança"
+        String tipoConta = "Corrente";
         double saldo = 1000.0;
 
         Scanner scanner = new Scanner(System.in);
         int opcao = 0;
 
-        // Loop para apresentar o menu de opções até que o usuário escolha sair
         while (opcao != 4) {
             System.out.println("\nBem-vindo, " + nomeCliente);
             System.out.println("Tipo de conta: " + tipoConta);
@@ -22,14 +20,16 @@ public class SistemaBancario {
             System.out.print("Opção: ");
             opcao = scanner.nextInt();
 
-            switch (opcao) {
+            if (opcao < 1 || opcao > 4) {
+                System.out.println("Opção inválida. Tente novamente.");
+                continue;
+            }
 
+            switch (opcao) {
                 case 1:
                     System.out.println("\nSaldo disponível: R$ " + saldo);
                     break;
-
                 case 2:
-
                     System.out.print("\nDigite o valor que deseja depositar: R$ ");
                     double valorDeposito = scanner.nextDouble();
                     if (valorDeposito > 0) {
@@ -40,18 +40,23 @@ public class SistemaBancario {
                     }
                     break;
                 case 3:
-
                     System.out.print("\nDigite o valor que deseja transferir: R$ ");
                     double valorTransferencia = scanner.nextDouble();
                     if (valorTransferencia > saldo) {
-                        System.out.println("Saldo insuficiente para realizar a transferência.");
+                        System.out.println("Saldo insuficiente.");
                     } else if (valorTransferencia <= 0) {
-                        System.out.println("Valor inválido para transferência.");
+                        System.out.println("Valor inválido.");
                     } else {
                         saldo -= valorTransferencia;
                         System.out.println("Transferência realizada com sucesso! Novo saldo: R$ " + saldo);
                     }
                     break;
-
-
+                case 4:
+                    System.out.println("\nObrigado por usar o sistema!");
+                    break;
             }
+        }
+
+        scanner.close();
+    }
+}
