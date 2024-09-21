@@ -1,6 +1,8 @@
+import desafio2.modelos.Livro;
 import desafio2.modelos.idadePessoa;
 import desafio2.modelos.ContaBancaria;
 import desafio2.modelos.Aluno;
+import desafio2.modelos.Livro;
 
 public class MainDesafios2 {
     public static void main(String[] args) {
@@ -15,6 +17,13 @@ public class MainDesafios2 {
 
 
         System.out.println("A média das notas de " + aluno1.getNome() + " é: " + aluno1.calcularMedia());
+
+        Livro livreto = new Livro();
+
+        livreto.setAutor("Julian");
+        livreto.setTitulo("Hora da estrela");
+
+        livreto.exibirDetalhes();
 
     }
 }
